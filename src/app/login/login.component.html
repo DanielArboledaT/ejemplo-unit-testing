@@ -1,0 +1,31 @@
+<div *ngIf="!isLoged" class="bg-login">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card p-3">
+            <form [formGroup]="formLogin">
+
+                <h3 class="text-center" style="margin-bottom: 50px;">Iniciar sesión</h3>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                    <div *ngIf="errorEmail" class="p-2">
+                        <span style="color: red; font-size: .8rem;">Email es un campo obligatorio.</span>
+                    </div>
+                    <br>
+                    <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+                    <br>
+                    <div class="text-center">
+                        <button class="btn btn-primary" (click)="testLogin()">INGRESAR</button>
+                    </div>
+                </div>
+                
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isLoged">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <h1>Andres y Daniel se loguearon tienen 5 de nota!!!</h1>
+    </div>
+</div>
